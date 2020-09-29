@@ -1,10 +1,33 @@
-import '../styles/globals.css';
+import { Global, css } from '@emotion/core';
 import type { AppProps /*, AppContext */ } from 'next/app';
+import { Fragment } from 'react';
 // import App from "next/app";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+const globalStyles = css`
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+      Helvetica Neue, sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+`;
+
+const MyApp = ({ Component, pageProps }: AppProps) => (
+  <Fragment>
+    <Global styles={globalStyles} />
+    <Component {...pageProps} />
+  </Fragment>
+);
 
 // Only uncomment this method if you have blocking data requirements for
 // every single page in your application. This disables the ability to
