@@ -1,3 +1,4 @@
+import 'antd/dist/antd.css'
 import { Global, css } from '@emotion/core';
 import type { AppProps /*, AppContext */ } from 'next/app';
 import { Fragment } from 'react';
