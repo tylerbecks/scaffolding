@@ -1,7 +1,9 @@
-import 'antd/dist/antd.css'
+import 'antd/dist/antd.css';
 import { Global, css } from '@emotion/core';
 import type { AppProps /*, AppContext */ } from 'next/app';
-import { Fragment } from 'react';
+import { Provider, getSession } from 'next-auth/client';
+import Layout from '../components/layout';
+import AuthGateway from '../components/auth-gateway';
 // import App from "next/app";
 
 const globalStyles = css`
@@ -23,12 +25,25 @@ const globalStyles = css`
   }
 `;
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <Fragment>
-    <Global styles={globalStyles} />
-    <Component {...pageProps} />
-  </Fragment>
-);
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  // Use the <Provider> to improve performance and allow components that call
+  // `useSession()` anywhere in your application to access the `session` object.
+  return (
+    <>
+      <Global styles={globalStyles} />
+
+      <Provider session={pageProps.session}>
+        <AuthGateway
+          Page={
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          }
+        />
+      </Provider>
+    </>
+  );
+};
 
 // Only uncomment this method if you have blocking data requirements for
 // every single page in your application. This disables the ability to
