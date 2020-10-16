@@ -2,34 +2,19 @@
 import { jsx, css } from '@emotion/core';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import Header from './header';
 
 const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 type Props = { children: React.ReactNode };
 
-const iconImg = 'https://www.flaticon.com/svg/static/icons/svg/3578/3578882.svg';
 const HEADER_HEIGHT = '64px';
-const iconContainer = css`
-  margin-right: 28px;
-  float: left;
-`;
-const icon = css`
-  max-height: 2.5em;
-`;
 
 export default ({ children }: Props) => (
   <Layout>
-    <Header>
-      <div css={iconContainer}>
-        <img src={iconImg} css={icon} />
-      </div>
-      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu>
-    </Header>
+    <Header />
+
     <Layout>
       <Sider
         style={{
