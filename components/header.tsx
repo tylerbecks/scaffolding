@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core';
-import { useSession } from 'next-auth/client';
-import { Avatar, Layout, Menu, Dropdown } from 'antd';
-import { signOut } from 'next-auth/client';
+import { css, jsx } from '@emotion/core';
+import { Avatar, Dropdown, Layout, Menu } from 'antd';
+import { signOut, useSession } from 'next-auth/client';
 
 const { Header } = Layout;
 
@@ -21,13 +20,13 @@ const avatar = css`
   cursor: pointer;
 `;
 
-export default () => {
+const MyHeader: React.FC = () => {
   const [session] = useSession();
 
   return (
     <Header css={alignment}>
       <div css={alignment}>
-        <img src={iconImg} css={logo} />
+        <img src={iconImg} css={logo} alt="template logo" />
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
           <Menu.Item key="1">nav 1</Menu.Item>
           <Menu.Item key="2">nav 2</Menu.Item>
@@ -48,3 +47,5 @@ export default () => {
     </Header>
   );
 };
+
+export default MyHeader;
