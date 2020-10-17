@@ -4,7 +4,17 @@ This repo is a quick way to start any new project.  It comes configured with the
 * [TypeScript](https://www.typescriptlang.org/docs)
 * [next-auth](https://next-auth.js.org/getting-started/example) with a sign in and sign out flow
 * [Emotion](https://emotion.sh/docs/introduction) for CSS with a basic dashboard layout
-* [Jest](https://jestjs.io/docs/en/getting-started) with working tests
+* [Jest](https://jestjs.io/docs/en/getting-started) and [jest-dom](https://github.com/testing-library/jest-dom) and [testing-library](https://testing-library.com/docs/react-testing-library/example-intro)
+
+Linters
+* [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier)
+* [eslint-plugin-emotion](https://emotion.sh/docs/eslint-plugin-emotion)
+* [eslint-plugin-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom)
+* [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
+* [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
+* [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
+* [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import/)
+* [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)
 
 ## Getting Started
 

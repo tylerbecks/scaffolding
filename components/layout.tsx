@@ -1,17 +1,13 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core';
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import Header from './header';
+import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
 
-type Props = { children: React.ReactNode };
-
 const HEADER_HEIGHT = '64px';
 
-export default ({ children }: Props) => (
+const MyLayout: React.FC = ({ children }) => (
   <Layout>
     <Header />
 
@@ -66,3 +62,5 @@ export default ({ children }: Props) => (
     </Layout>
   </Layout>
 );
+
+export default MyLayout;

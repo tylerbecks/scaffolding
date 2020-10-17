@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import { useSession } from 'next-auth/client';
-import { Avatar, Layout, Menu, Dropdown, Button } from 'antd';
+import { Avatar, Layout, Menu, Dropdown } from 'antd';
 import { signOut } from 'next-auth/client';
 
 const { Header } = Layout;
