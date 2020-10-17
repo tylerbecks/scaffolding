@@ -84,4 +84,5 @@ const options = {
   debug: false,
 };
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default (req: NextApiRequest, res: NextApiResponse) => NextAuth(req, res, options);
