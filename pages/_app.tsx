@@ -1,9 +1,11 @@
 import 'antd/dist/antd.css';
-import { Global, css } from '@emotion/core';
+
+import { css, Global } from '@emotion/core';
+import { Provider } from 'next-auth/client';
 import type { AppProps /*, AppContext */ } from 'next/app';
-import { Provider, getSession } from 'next-auth/client';
-import Layout from '../components/layout';
+
 import AuthGateway from '../components/auth-gateway';
+import Layout from '../components/layout';
 // import App from "next/app";
 
 const globalStyles = css`
@@ -11,8 +13,8 @@ const globalStyles = css`
   body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-      Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+      Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
   a {
@@ -25,7 +27,7 @@ const globalStyles = css`
   }
 `;
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   // Use the <Provider> to improve performance and allow components that call
   // `useSession()` anywhere in your application to access the `session` object.
   return (
