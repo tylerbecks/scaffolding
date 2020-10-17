@@ -13,7 +13,7 @@ const container = css`
 
 type Props = { Page: React.ReactNode };
 
-export default function AuthGateway({ Page }: Props) {
+const AuthGateway: React.FC<Props> = ({ Page }: Props) => {
   const [session, loading] = useSession();
 
   if (loading) {
@@ -27,12 +27,14 @@ export default function AuthGateway({ Page }: Props) {
   if (!session) {
     return (
       <main css={container}>
-          <Button type="primary" onClick={() => signIn('google')}>
-            Sign in
-          </Button>
+        <Button type="primary" onClick={() => signIn('google')}>
+          Sign in
+        </Button>
       </main>
     );
   }
 
-  return Page;
-}
+  return <>{Page}</>;
+};
+
+export default AuthGateway;
