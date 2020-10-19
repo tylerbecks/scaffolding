@@ -2,13 +2,16 @@ import 'antd/dist/antd.css';
 
 import { ApolloProvider } from '@apollo/client';
 import { css, Global } from '@emotion/core';
+import LogRocket from 'logrocket';
 import { Provider } from 'next-auth/client';
 import type { AppProps /*, AppContext */ } from 'next/app';
 
+// import App from "next/app";
 import { client } from '../apollo-config';
 import AuthGateway from '../components/auth-gateway';
 import Layout from '../components/layout';
-// import App from "next/app";
+
+LogRocket.init('mg0tep/scaffolding'); // TODO
 
 const globalStyles = css`
   html,
