@@ -43,14 +43,22 @@ module.exports = {
   root: true,
   rules: {
     'emotion/jsx-import': 'error',
-    'react/react-in-jsx-scope': 'off',
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Use our .prettierrc file as source
-    'simple-import-sort/sort': 'error',
-    'sort-imports': 'off',
     'import/first': 'error',
-    'import/order': 'off',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
+    'import/order': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton'],
+      },
+    ],
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Use our .prettierrc file as source
+    'react/react-in-jsx-scope': 'off',
+    'simple-import-sort/sort': 'error',
+    'sort-imports': 'off',
   },
   settings: {
     react: {
