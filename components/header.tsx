@@ -2,6 +2,7 @@
 import { css, jsx } from '@emotion/core';
 import { Avatar, Dropdown, Layout, Menu } from 'antd';
 import { signOut, useSession } from 'next-auth/client';
+import Link from 'next/link';
 
 const { Header } = Layout;
 
@@ -26,7 +27,11 @@ const MyHeader: React.FC = () => {
   return (
     <Header css={alignment}>
       <div css={alignment}>
-        <img src={iconImg} css={logo} alt="template logo" />
+        <Link href="/">
+          <a>
+            <img src={iconImg} css={logo} alt="template logo" />
+          </a>
+        </Link>
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
           <Menu.Item key="1">nav 1</Menu.Item>
           <Menu.Item key="2">nav 2</Menu.Item>
