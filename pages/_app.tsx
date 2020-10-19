@@ -1,9 +1,11 @@
 import 'antd/dist/antd.css';
 
+import { ApolloProvider } from '@apollo/client';
 import { css, Global } from '@emotion/core';
 import { Provider } from 'next-auth/client';
 import type { AppProps /*, AppContext */ } from 'next/app';
 
+import { client } from '../apollo-config';
 import AuthGateway from '../components/auth-gateway';
 import Layout from '../components/layout';
 // import App from "next/app";
@@ -35,13 +37,15 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <Global styles={globalStyles} />
 
       <Provider session={pageProps.session}>
-        <AuthGateway
-          Page={
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          }
-        />
+        <ApolloProvider client={client}>
+          <AuthGateway
+            Page={
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            }
+          />
+        </ApolloProvider>
       </Provider>
     </>
   );

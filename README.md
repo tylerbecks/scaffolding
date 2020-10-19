@@ -30,7 +30,9 @@ yarn
 
 2. Create a copy of .env.local.copy named .env.local (it will be ignored by .gitignore). Add the missing values.  Refer to [next-auth docs](https://next-auth.js.org/providers/google) for help.
 
-3. Run the development server:
+3. Create [Hasura Cloud](https://hasura.io/docs/1.0/graphql/cloud/getting-started/index.html#cloud-getting-started) instance
+
+4. Now, run the development server:
 
 ```bash
 npm run dev
